@@ -4,19 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="manifest" href="manifest.json">
   <title>Document</title>
 </head>
 <body>
-  <div id="plane"></div>
+  <p>salom</p>
+  
 </body>
 <script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js");
+}
 
-  const plane = document.getElementById("plane");
-
-plane.style.width = "100px";
-plane.style.height = "100px";
-plane.style.backgroundImage = "url('file:///android_asset/plane.png')";
-plane.style.backgroundSize = "contain";
-plane.style.backgroundRepeat = "no-repeat";
 </script>
 </html>
