@@ -1,0 +1,94 @@
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  height: 100vh;
+  background: black;
+}
+#bo {
+  width: 100%;
+  height: 100vh;
+background: url("./back2.gif")center;
+background-size: cover;
+color:white;
+display:flex;
+justify-content:center;
+height:100vh;
+font-family:Arial;
+text-align:center;
+position: relative;
+}
+
+#kun {
+  width: 96%;
+  height: 14vh;
+  background: #3A86FF;
+  position: absolute;
+  top: 30vh;
+  left: 2%;
+  z-index: 2;
+  border-radius: 10px;
+  
+  
+}
+#kun7{
+  width: 96%;
+  height: 9vh;
+  margin-top: 1vh;
+  margin-left: 2%;
+  background-color: #469;
+  border-radius: 10px;
+  text-align: center;
+}
+#co1{
+  width: 12%;
+  height: 8vh;
+  background: black;
+  float: left;
+  margin: 0.5vh;
+  border-radius: 10px;
+}
+#ok{
+  text-align: center;
+}
+#ok2{
+  border-radius: 10px;
+  padding: 2px;
+  width: 15%;
+  margin: 9px;
+  height: 3vh;
+  background: black;
+  color: #fff;
+}
+p{
+  color: #fff;
+}
+#coin{
+  width: 100%;
+  height: 5vh;
+  background: url("coin.png")center;
+  background-size: cover;
+}
+#ol{
+  width: 90%;
+  padding: 8px;
+  border-radius: 10px;
+}
+.bt{
+  padding: 12px;
+  border-radius: 10px;
+  background: #0B132B;
+  color: #fff;
+  font-size: 24px;
+}
+.jetstrike{
+  font-size: 40px;
+  font-weight: bold;
+}
+.aa{
+  margin-top: 30vh;
+}

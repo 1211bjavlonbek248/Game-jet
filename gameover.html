@@ -1,0 +1,69 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Game Over</title>
+
+<style>
+body{
+    margin:0;
+    background: url("back.gif")center;
+background-size: cover;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-family:Arial;
+    text-align:center;
+}
+
+h1{
+    color:red;
+    font-size:50px;
+}
+
+p{
+    font-size:30px;
+}
+
+button{
+    padding:15px 30px;
+    font-size:25px;
+    border:none;
+    border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div>
+    <h1>GAME OVER</h1>
+<h2>Pul: <span id="coins">0</span> so'm</h2>
+    <p>Ball: <span id="score">0</span></p>
+
+    <p>Rekord: <span id="highScore">0</span></p>
+
+    <button onclick="location.href='shop.html'">
+    🛒 SHOP
+</button>
+
+<br><br>
+
+<button onclick="location.href='index2.html'">
+    Qayta o'ynash
+</button>
+</div>
+
+<script>
+let coins = parseInt(localStorage.getItem("coins")) || 0;
+document.getElementById("coins").innerText = coins;
+document.getElementById("score").innerText =
+localStorage.getItem("lastScore") || 0;
+
+document.getElementById("highScore").innerText =
+localStorage.getItem("highScore") || 0;
+</script>
+
+</body>
+</html>

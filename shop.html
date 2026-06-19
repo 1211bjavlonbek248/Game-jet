@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Jet Shop</title>
+  
+  <style>
+    body {
+  background: url("back5.gif")center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  font-family: Arial;
+}
+
+.jet {
+  padding: 15px;
+  margin: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  border: 3px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.jetimg {
+  width: 220px;
+  transition: 0.3s;
+}
+
+.jetimg:hover {
+  transform: scale(1.05);
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background: #00aaff;
+  color: white;
+  font-size: 18px;
+}
+
+.back {
+  margin-top: 20px;
+  background: #ff4444;
+}
+  </style>
+</head>
+
+<body>
+  
+  <h1>🛒 JET SHOP</h1>
+  
+  <h2>Pul: <span id="coins">0</span> so'm</h2>
+  
+<div class="jet">
+  <img src="plane.png" class="jetimg">
+  <h2>F-22 Raptor</h2>
+  <p>✅ Bepul</p>
+  <button id="btn1" onclick="selectJet('plane.png',1)">
+    Tanlash
+  </button>
+</div>
+
+<div class="jet">
+  <img src="plane2.png" class="jetimg">
+  <h2>F-35 Lightning II</h2>
+  <p>💰 12000 so'm</p>
+  <button id="btn2" onclick="buyJet(2,12000,'plane2.png')">
+    Sotib olish
+  </button>
+</div>
+
+<div class="jet">
+  <img src="plane3.png" class="jetimg">
+  <h2>Su-57 Felon</h2>
+  <p>💰 20000 so'm</p>
+  <button id="btn3" onclick="buyJet(3,20000,'plane3.png')">
+    Sotib olish
+  </button>
+</div>
+
+<div class="jet">
+  <img src="plane4.png" class="jetimg">
+  <h2>J-20 Mighty Dragon</h2>
+  <p>💰 28000 so'm</p>
+  <button id="btn4" onclick="buyJet(4,28000,'plane4.png')">
+    Sotib olish
+  </button>
+</div>
+  
+  <button class="back" onclick="location.href='index2.html'">
+    O'yinga qaytish
+  </button>
+  <button class="back" onclick="location.href='index.html'">
+  🏡Home
+</button>
+  
+  <script>
+let coins = parseInt(localStorage.getItem("coins")) || 0;
+document.getElementById("coins").innerText = coins;
+
+function selectJet(img, id) {
+  localStorage.setItem("selectedJet", img);
+  localStorage.setItem("selectedJetId", id);
+  updateShop();
+}
+
+function buyJet(id, price, img) {
+  
+  let coins = parseInt(localStorage.getItem("coins")) || 0;
+  
+  if (localStorage.getItem("jet" + id)) {
+    selectJet(img, id);
+    return;
+  }
+  
+  if (coins < price) {
+    alert("Pul yetarli emas!");
+    return;
+  }
+  
+  coins -= price;
+  
+  localStorage.setItem("coins", coins);
+  localStorage.setItem("jet" + id, "true");
+  
+  document.getElementById("coins").innerText = coins;
+  
+  selectJet(img, id);
+}
+
+function updateShop() {
+  
+  let selected =
+    parseInt(localStorage.getItem("selectedJetId")) || 1;
+  
+  for (let i = 1; i <= 4; i++) {
+    
+    let btn =
+      document.getElementById("btn" + i);
+    
+    if (i === selected) {
+      
+      btn.innerText = "✅ Tanlangan";
+      
+    } else if (i === 1 ||
+      localStorage.getItem("jet" + i)) {
+      
+      btn.innerText = "Tanlash";
+      
+    } else {
+      
+      btn.innerText = "Sotib olish";
+      
+    }
+  }
+}
+
+updateShop();
+  </script>
+  
+</body>
+
+</html>
