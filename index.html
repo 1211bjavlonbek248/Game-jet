@@ -7,12 +7,16 @@
   <title>Document</title>
 </head>
 <body>
-  <p>salom</p>
+  <div id="plane"></div>
 </body>
 <script>
-document.body.style.backgroundImage = "url('file:///android_asset/plane.png')";
-document.body.style.backgroundSize = "cover";
-document.body.style.backgroundPosition = "center";
-document.body.style.backgroundRepeat = "no-repeat";
+
+  const plane = document.getElementById("plane");
+
+plane.style.width = "100px";
+plane.style.height = "100px";
+plane.style.backgroundImage = "url('file:///android_asset/plane.png')";
+plane.style.backgroundSize = "contain";
+plane.style.backgroundRepeat = "no-repeat";
 </script>
 </html>
